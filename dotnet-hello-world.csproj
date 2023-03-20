@@ -6,6 +6,8 @@
     <RootNamespace>dotnet_hello_world</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <DocumentationFile>Comments.xml</DocumentationFile>
   </PropertyGroup>
 
 </Project>

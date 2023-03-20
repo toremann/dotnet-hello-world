@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotnet-hello-world</name>
+    </assembly>
+    <members>
+        <member name="M:HelloWorld.Program.Main(System.String[])">
+            XML comment
+            <summary> 
+            This is the main function
+            </summary>
+        </member>
+    </members>
+</doc>
