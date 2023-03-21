@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace HelloWorld
 {
@@ -16,13 +17,47 @@ namespace HelloWorld
             // char c = 'c';
 
             int[] vals = new int[5];
-            string[] strs = {"one", "two", "three"};
+            string[] strs = { "one", "two", "three" };
+
+            int value = 15;
 
             string a = "Hello", b = "World";
 
             Console.WriteLine("Hello, World!");
 
-            Console.WriteLine(a + b);
+            StringBuilder sb = new StringBuilder("Initial string.", 200);
+
+            Console.WriteLine($"Capacity: {sb.Capacity}; Length: {sb.Length}");
+
+
+
+            for (int i = 0; i < value; i++) {
+                Console.WriteLine("Beep boop {0}", i);
+            }
+
+            int password = 123;
+
+            if (password == 1233)
+            {
+                Console.WriteLine("Password Correct, yay!");
+            }
+            else
+            {
+                Console.WriteLine("Password Inncorrect, buuu");
+            }
+
+            switch (password)
+            {
+                case 123:
+                    Console.WriteLine("This is correct");
+                    break;
+                case 1234:
+                    Console.WriteLine("This is wrong");
+                    break;
+                default:
+                    Console.WriteLine("Meow");
+                    break;
+            }
         }
     }
 }
