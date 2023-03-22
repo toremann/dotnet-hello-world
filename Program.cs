@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Globalization;
 
 namespace HelloWorld
 {
@@ -11,53 +12,34 @@ namespace HelloWorld
         /// </summary>
         static void Main(string[] args)
         {
-            // int i = 10;
-            // float f = 2.0f;
-            // decimal d = 10.0m;
-            // char c = 'c';
+            int theNumber = new Random().Next(20);
+            bool guessCorrect = false;
+            Console.WriteLine("Guess the number!");
 
-            int[] vals = new int[5];
-            string[] strs = { "one", "two", "three" };
-
-            int value = 15;
-
-            string a = "Hello", b = "World";
-
-            Console.WriteLine("Hello, World!");
-
-            StringBuilder sb = new StringBuilder("Initial string.", 200);
-
-            Console.WriteLine($"Capacity: {sb.Capacity}; Length: {sb.Length}");
-
-
-
-            for (int i = 0; i < value; i++) {
-                Console.WriteLine("Beep boop {0}", i);
-            }
-
-            int password = 123;
-
-            if (password == 1233)
+            do
             {
-                Console.WriteLine("Password Correct, yay!");
-            }
-            else
-            {
-                Console.WriteLine("Password Inncorrect, buuu");
-            }
+                string guessString = Console.ReadLine();
+                int guess;
+                if (int.TryParse(guessString, out guess))
+                {
+                    if (guess == theNumber)
+                    {
+                        Console.WriteLine("You guessed correctly!");
+                        guessCorrect = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Wrong number, try again!");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input, please enter an integer.");
+                }
+            } while (!guessCorrect);
 
-            switch (password)
-            {
-                case 123:
-                    Console.WriteLine("This is correct");
-                    break;
-                case 1234:
-                    Console.WriteLine("This is wrong");
-                    break;
-                default:
-                    Console.WriteLine("Meow");
-                    break;
-            }
+            Console.WriteLine("Press any key to exit.");
+            Console.ReadKey();
         }
     }
 }
