@@ -4,11 +4,14 @@
         <name>dotnet-hello-world</name>
     </assembly>
     <members>
-        <member name="M:HelloWorld.Program.Main(System.String[])">
-            XML comment
-            <summary> 
-            This is the main function
-            </summary>
+        <member name="T:Defining.Book">
+            Some book class
+        </member>
+        <member name="M:Defining.Book.#ctor(System.String,System.String,System.Int32)">
+            Book
+        </member>
+        <member name="M:Defining.Book.GetDescription">
+            Book.GetDescription Class definition
         </member>
     </members>
 </doc>

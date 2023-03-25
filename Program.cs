@@ -1,45 +1,17 @@
 ﻿using System;
-using System.Text;
-using System.Globalization;
 
-namespace HelloWorld
+namespace Defining
 {
     class Program
     {
-        /// XML comment
-        /// <summary> 
-        /// This is the main function
-        /// </summary>
         static void Main(string[] args)
         {
-            int theNumber = new Random().Next(20);
-            bool guessCorrect = false;
-            Console.WriteLine("Guess the number!");
+            Book b1 = new Book("Somebook", "Author", 123);
+            Book b2 = new Book("Another Book", "Another author", 12345);
 
-            do
-            {
-                string guessString = Console.ReadLine();
-                int guess;
-                if (int.TryParse(guessString, out guess))
-                {
-                    if (guess == theNumber)
-                    {
-                        Console.WriteLine("You guessed correctly!");
-                        guessCorrect = true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Wrong number, try again!");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input, please enter an integer.");
-                }
-            } while (!guessCorrect);
+            Console.WriteLine(b1.GetDescription());
+            Console.WriteLine(b2.GetDescription());
 
-            Console.WriteLine("Press any key to exit.");
-            Console.ReadKey();
         }
     }
 }
