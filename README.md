@@ -1,5 +1,7 @@
 Learning dotnet c#
 
-dotnet new console
+dotnet new webapi
 dotnet run
-dotnet build
+dotnet builda
+
+The Swagger page /swagger/index.html

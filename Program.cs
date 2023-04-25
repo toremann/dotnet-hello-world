@@ -1,17 +1,25 @@
-﻿using System;
+var builder = WebApplication.CreateBuilder(args);
 
-namespace Defining
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Book b1 = new Book("Somebook", "Author", 123);
-            Book b2 = new Book("Another Book", "Another author", 12345);
-
-            Console.WriteLine(b1.GetDescription());
-            Console.WriteLine(b2.GetDescription());
-
-        }
-    }
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();
